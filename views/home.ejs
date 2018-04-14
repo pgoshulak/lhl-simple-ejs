@@ -24,7 +24,16 @@
     </div>
     <div class="row">
       <div class="col-lg-12">
-        <div class="list-group">LIST_OF_POSTS</div>
+        <div class="list-group">
+
+          <% posts.forEach((post) => { %>
+            <a href="/post/<%=post.id %>" class="list-group-item">
+              <h4 class="list-group-item-heading"><%= post.title %></h4>
+              <p class="list-group-item-text"><%= post.author %></p>
+            </a>
+          <% }) %>
+
+        </div>
       </div>
     </div>
     <%- include('partials/footer') %>
